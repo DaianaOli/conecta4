@@ -1,4 +1,5 @@
 import React from 'react'
+import Swal from 'sweetalert'
 import './conecta4.css'
 
 const Contecta4 = () => {
@@ -34,6 +35,15 @@ const Contecta4 = () => {
     }
 
     const handleReset = () => {
+        Swal({
+            title: '¿Estás seguro?',
+            text: 'Se reiniciarán el tablero',
+            icon: 'warning',
+            buttons: true,
+            dangerMode: true,
+        })
+        .then((willDelete) => {
+            if (willDelete) {
         setTablero([
             [0, 0, 0, 0, 0, 0, 0],
             [0, 0, 0, 0, 0, 0, 0],
@@ -47,8 +57,19 @@ const Contecta4 = () => {
         setMensaje('')
         setJugadas(0)
     }
+    })
+    }
 
     const handleReiniciar = () => {
+        Swal({
+            title: '¿Estás seguro?',
+            text: 'Se reiniciarán los marcadores',
+            icon: 'warning',
+            buttons: true,
+            dangerMode: true,
+        })
+        .then((willDelete) => {
+            if (willDelete) {
         setJugador1(0)
         setJugador2(0)
         setTablero([
@@ -63,6 +84,8 @@ const Contecta4 = () => {
         setGanador(0)
         setMensaje('')
         setJugadas(0)
+    }
+    })
     }
 
     const checkGanador = () => {
@@ -102,27 +125,39 @@ const Contecta4 = () => {
             setGanador(1)
             setMensaje('Gana el jugador 1')
             setJugador1(jugador1 + 1)
+            setTurno(1)
         } else if (ganador === 2) {
             setGanador(2)
             setMensaje('Gana el jugador 2')
             setJugador2(jugador2 + 1)
+            setTurno(1)
         } else if ( jugadas === 42) {
             setMensaje('Empate')
         }
     }, [tablero])
 
+    const handleInfo = () => {
+        Swal({
+            title: 'Conecta 4',
+            text: 'El objetivo del juego es conseguir 4 fichas del mismo color en línea recta, ya sea horizontal, vertical o diagonal. El jugador 1 juega con fichas rojas y el jugador 2 con fichas amarillas. El jugador que consiga 4 fichas en línea gana la partida. Si no hay ganador, se declara empate.',
+            icon: 'info',
+            buttons: true,
+            dangerMode: true,
+            })
+    }
 
     return (
         <div className="conecta4">
             <div className="info">
+            <button onClick={handleInfo}>info</button>
                     <div className="turno">
                         <p>Turno del jugador {turno}</p>
-                        {turno === 1 && <div className="roja">.</div>}
+                        {turno === 1 && <div className="roja"></div>}
                         {turno === 2 && <div className="amarilla"></div>}
-                    </div>
                     <div className="mensaje">
                                 
                         <p>{mensaje}</p>
+                    </div>
                     </div>
                     <div className="puntuacion">
                         <p>Puntuación</p>
