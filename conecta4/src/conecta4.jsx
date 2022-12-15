@@ -106,44 +106,45 @@ const Contecta4 = () => {
             setGanador(2)
             setMensaje('Gana el jugador 2')
             setJugador2(jugador2 + 1)
-        } else if (jugadas === 42) {
+        } else if ( jugadas === 42) {
             setMensaje('Empate')
         }
     }, [tablero])
 
+
     return (
         <div className="conecta4">
-            <div className="tablero">
-                {tablero.map((fila, i) => (
-                    <div key={i} className="fila">
-                        {fila.map((celda, j) => (
-                            <div key={j} className="celda" onClick={() => handleClick(i, j)}>
-                                {celda === 1 && <div className="ficharoja"></div>}
-                                {celda === 2 && <div className="fichaamarilla"></div>}
-                            </div>
-                        ))}
-                    </div>
-                ))}
-            </div>
             <div className="info">
-                <div className="turno">
-                    {turno === 1 && <div className="roja"></div>}
-                    {turno === 2 && <div className="amarilla"></div>}
-                    <p>Turno del jugador {turno}</p>
-                </div>
-                <div className="mensaje">
-                            
-                    <p>{mensaje}</p>
-                </div>
-                <div className="puntuacion">
-                    <p>Puntuación</p>
-                    <p>Jugador 1: {jugador1}</p>
-                    <p>Jugador 2: {jugador2}</p>
-                </div>
-                <div className="botones">
-                    <button onClick={handleReset}>Reiniciar partida</button>
-                    <button onClick={handleReiniciar}>Reiniciar juego</button>
-                </div>
+                    <div className="turno">
+                        <p>Turno del jugador {turno}</p>
+                        {turno === 1 && <div className="roja">.</div>}
+                        {turno === 2 && <div className="amarilla"></div>}
+                    </div>
+                    <div className="mensaje">
+                                
+                        <p>{mensaje}</p>
+                    </div>
+                    <div className="puntuacion">
+                        <p>Puntuación</p>
+                        <p>Jugador 1: {jugador1}</p>
+                        <p>Jugador 2: {jugador2}</p>
+                    </div>
+                    <div className="botones">
+                        <button onClick={handleReset}>Reiniciar partida</button>
+                        <button onClick={handleReiniciar}>Reiniciar juego</button>
+                    </div>
+            </div>
+            <div className="tablero">
+                    {tablero.map((fila, i) => (
+                        <div key={i} className="fila">
+                            {fila.map((celda, j) => (
+                                <div key={j} className="celda" onClick={() => handleClick(i, j)}>
+                                    {celda === 1 && <div className="ficharoja"></div>}
+                                    {celda === 2 && <div className="fichaamarilla"></div>}
+                                </div>
+                            ))}
+                        </div>
+                    ))}
             </div>
         </div>
     )
