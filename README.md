@@ -1,5 +1,5 @@
 # conecta4
-Crea el juego conecta cuatrO con React
+Crea el juego conecta cuatrO con React (no responsive web)
 
 Requisitos:
 
