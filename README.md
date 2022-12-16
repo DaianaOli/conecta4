@@ -14,8 +14,9 @@ Requisitos:
  <p>Home </p>
 <img src= "https://res.cloudinary.com/dcpcja2qg/image/upload/v1671195154/Captura_de_pantalla_191_mk0qrh.png" />
 <img src="https://res.cloudinary.com/dcpcja2qg/image/upload/v1671195256/Captura_de_pantalla_195_wceazv.png"/>
+<p>Info</p>
+<img src="https://res.cloudinary.com/dcpcja2qg/image/upload/v1671195336/Captura_de_pantalla_192_oua2kw.png" />
 <p>Alertas </p>
 <img src="https://res.cloudinary.com/dcpcja2qg/image/upload/v1671195289/Captura_de_pantalla_193_llf2wv.png" />
 <img src="https://res.cloudinary.com/dcpcja2qg/image/upload/v1671195083/Captura_de_pantalla_194_grhpfb.png" />
-<p>Info</p>
-<img src="https://res.cloudinary.com/dcpcja2qg/image/upload/v1671195336/Captura_de_pantalla_192_oua2kw.png" />
+
