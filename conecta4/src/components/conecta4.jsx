@@ -1,6 +1,7 @@
 import React from 'react'
 import Swal from 'sweetalert'
-import './conecta4.css'
+import {BsInfoCircle}   from 'react-icons/bs'
+import '../styles/conecta4.css'
 
 const Contecta4 = () => {
     const [tablero, setTablero] = React.useState([
@@ -63,7 +64,7 @@ const Contecta4 = () => {
     const handleReiniciar = () => {
         Swal({
             title: '¿Estás seguro?',
-            text: 'Se reiniciarán los marcadores',
+            text: 'Se reiniciarán las puntuaciones',
             icon: 'warning',
             buttons: true,
             dangerMode: true,
@@ -149,7 +150,6 @@ const Contecta4 = () => {
     return (
         <div className="conecta4">
             <div className="info">
-            <button onClick={handleInfo}>info</button>
                     <div className="turno">
                         <p>Turno del jugador {turno}</p>
                         {turno === 1 && <div className="roja"></div>}
@@ -166,6 +166,7 @@ const Contecta4 = () => {
                     </div>
                     <div className="botones">
                         <button onClick={handleReset}>Reiniciar partida</button>
+                        <button onClick={handleInfo}><BsInfoCircle/></button>
                         <button onClick={handleReiniciar}>Reiniciar juego</button>
                     </div>
             </div>

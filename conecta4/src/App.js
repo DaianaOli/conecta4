@@ -1,4 +1,4 @@
-import Conecta4 from './conecta4';
+import Conecta4 from './components/conecta4';
 import './App.css';
 
 function App() {
