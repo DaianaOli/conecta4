@@ -62,9 +62,9 @@ const Landing = () => {
             />
         </div>
         <div className="landing__container__botones">
-            {/* <Link to="/conecta4"> */}
+            <Link to="/conecta4">
                 <button onClick={handleJugar}>Jugar</button>
-            {/* </Link> */}
+            </Link>
             <button onClick={handleInfo}>
                 <BsInfoCircle />
             </button>
