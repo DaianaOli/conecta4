@@ -1,5 +1,6 @@
 import React from "react";
 import Swal from "sweetalert";
+import soundfile from './fichas.mp3'
 import "../styles/conecta4.css";
 
 const Contecta4 = () => {
@@ -20,6 +21,7 @@ const Contecta4 = () => {
 
   const handleClick = (i, j) => {
     if (ganador === 0) {
+      document.getElementById('audio').play();
       let tablero2 = tablero.map((fila) => [...fila]);
       let k = 5;
       while (k >= 0 && tablero2[k][j] !== 0) {
@@ -152,6 +154,7 @@ const Contecta4 = () => {
 
   return (
     <div className="conecta4">
+     <audio id="audio" src={soundfile}/>
       <div className="info">
         <div className="turno">
           <p>Turno del jugador {turno}</p>
